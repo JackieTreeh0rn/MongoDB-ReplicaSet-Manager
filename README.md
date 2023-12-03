@@ -42,7 +42,6 @@ The script requires the following environment variables, defined in `mongo-rs.en
 * `STACK_NAME`, the default value is `myapp`
 * `MONGO_VERSION`, the default value is `7.0.2`
 * `REPLICASET_NAME`, the default value is `rs`
-<!-- * `MONGO_PORT`, the default value is `27017` -->
 * `BACKEND_NETWORK_NAME`, the default value is `${STACK_NAME}_backend`
 * `MONGO_SERVICE_URI`, the default value is `${STACK_NAME:}_database`
 * `MONGO_ROOT_USERNAME`, the default value is `root`
@@ -129,7 +128,7 @@ The script requires the following environment variables, defined in `mongo-rs.en
         name: '10.0.26.48:27017',
         health: 1,
         state: 1,
-        stateStr: 'PRIMARY',     <----------------------------------------------- SHOULD MATCH log's outout for Primary
+        stateStr: 'PRIMARY',     <-------------------------- SHOULD match log's outout for Primary
         uptime: 20843,
         optime: { ts: Timestamp({ t: 1701196480, i: 1 }), t: Long("26") },
         optimeDurable: { ts: Timestamp({ t: 1701196480, i: 1 }), t: Long("26") },
