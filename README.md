@@ -45,10 +45,10 @@ This tool automates the configuration, initiation, monitoring, and management of
     - The dbcontroller tool will run as a single instance per Swarm node (***global*** mode) as defined in the Compose YML.
 <br/>
 
-5. Monitor logs for the tool's output and any potential errors or adjustments *(see troubleshooting section)*
+4. Monitor logs for the tool's output and any potential errors or adjustments *(see troubleshooting section)*
 <br/>
 
-6. To remove, run `./remove.sh` or delete the stack manually via `docker stack rm [stackname]`. 
+5. To remove, run `./remove.sh` or delete the stack manually via `docker stack rm [stackname]`. 
 **Note:**  the `_backend` 'overlay' network created during initial deployment will not be removed automatically as it is considered external. If redeploying/updating, leave the existing network in place so as to retain the original network subnet.
 
 ## Environment Variables
