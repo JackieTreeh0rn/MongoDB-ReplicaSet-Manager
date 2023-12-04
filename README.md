@@ -5,20 +5,13 @@
 This tool automates the configuration, initiation, monitoring, and management of a MongoDB replica set within a Docker Swarm environment. It ensures continuous operation, and adapts to changes within the Swarm network, ensuring high availability and consistency of data.
 
 ## Features
-- ✅ **Automated Replica Set Initialization**: Configures and initiates MongoDB replica sets from scratch, determines the number of nodes in the MongoDB global service to wait for, taking into account 'down' nodes or nodes marked as 'unavailable' in the swarm.
-<br/>
-- ✅ **Primary Node tracking & Configuration for Mongo ReplicaSet**: automatic replicaset primary designation and tracking on new & existing deployments.
-<br/>
-- ✅ **Dynamic Replica Set Reconfiguration**: Adjusts the replica set as MongoDB instance IPs change within Docker Swarm. Checks if a replicaset is already configured or being redeployed and adjusts members accordingly.
-<br/>
-- ✅ **Resilience and Redundancy**: Ensures the replica set's stability and availability, even during node changes. In case the primary node is lost, it waits for a new election or forces reconfiguration when the replica-set is inconsistent.
-<br/>
-- ✅ **Admin and User Setup**: Automates the creation of MongoDB admin (root) account as well as an initial db user & associated collection/db insertion for your main application using mongo.
-<br/>
-- ✅ **Continuous Monitoring**: Watches for changes in the Docker Swarm topology. Continuously listens for changes in IP addresses or MongoDB instances removals and/or additions and adjusts the replica set accordingly. Tested againts a wide variety of potential outage edge cases to ensure reliability.
-<br/>
-- ✅ **Error Handling and Detailed Logging**: Provides comprehensive logging for efficient troubleshooting.
-<br/>
+- ✅ **Automated Replica Set Initialization**: Configures and initiates MongoDB replica sets from scratch, determines the number of nodes in the MongoDB global service to wait for, taking into account 'down' nodes or nodes marked as 'unavailable' in the swarm.<br/>
+- ✅ **Primary Node tracking & Configuration for Mongo ReplicaSet**: automatic replicaset primary designation and tracking on new & existing deployments.<br/>
+- ✅ **Dynamic Replica Set Reconfiguration**: Adjusts the replica set as MongoDB instance IPs change within Docker Swarm. Checks if a replicaset is already configured or being redeployed and adjusts members accordingly.<br/>
+- ✅ **Resilience and Redundancy**: Ensures the replica set's stability and availability, even during node changes. In case the primary node is lost, it waits for a new election or forces reconfiguration when the replica-set is inconsistent.<br/>
+- ✅ **Admin and User Setup**: Automates the creation of MongoDB admin (root) account as well as an initial db user & associated collection/db insertion for your main application using mongo.<br/>
+- ✅ **Continuous Monitoring**: Watches for changes in the Docker Swarm topology. Continuously listens for changes in IP addresses or MongoDB instances removals and/or additions and adjusts the replica set accordingly. Tested againts a wide variety of potential outage edge cases to ensure reliability.<br/>
+- ✅ **Error Handling and Detailed Logging**: Provides comprehensive logging for efficient troubleshooting.<br/>
 - ✅ **Scalability**: Designed to work with multiple nodes in a Docker Swarm setup and scale the ReplicaSet automatically as additional MongoDB nodes are added/removed from the stack.
 
 ## Requirements
