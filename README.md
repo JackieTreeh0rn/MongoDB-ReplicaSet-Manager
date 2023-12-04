@@ -6,6 +6,7 @@ This tool automates the configuration, initiation, monitoring, and management of
 
 ## Features
 - ✅ **Automated Replica Set Initialization**: Configures and initiates MongoDB replica sets from scratch, determines the number of nodes in the MongoDB global service to wait for, taking into account 'down' nodes or nodes marked as 'unavailable' in the swarm.<br/>
+
 - ✅ **Primary Node tracking & Configuration for Mongo ReplicaSet**: automatic replicaset primary designation and tracking on new & existing deployments.<br/>
 - ✅ **Dynamic Replica Set Reconfiguration**: Adjusts the replica set as MongoDB instance IPs change within Docker Swarm. Checks if a replicaset is already configured or being redeployed and adjusts members accordingly.<br/>
 - ✅ **Resilience and Redundancy**: Ensures the replica set's stability and availability, even during node changes. In case the primary node is lost, it waits for a new election or forces reconfiguration when the replica-set is inconsistent.<br/>
@@ -27,13 +28,12 @@ This tool automates the configuration, initiation, monitoring, and management of
 - Relevant environment variables set up as per the tool's requirements  (see `mongo-rs.env`).
 
 ## How to Use
-1. Ensure that all required environment variables are set in `mongo-rs.env` (description below). 
-<br/>
+1. Ensure that all required environment variables are set in `mongo-rs.env` (description below). <br/>
 
 2. Modify the `docker-compose-stack.yml` to add your main application making use of the mongo service.
 **Note** - set your application's MongoDB URI to use the following connection string when connecting to the replica set service:<br/>
+
 `mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@database:${MONGO_PORT:-27017}/?replicaSet=${REPLICASET_NAME}`
-<br/>
 
 3. Deploy the compose stack on your Docker Swarm using the `deploy.sh` script via:
 `sh deploy.sh` OR `./deploy.sh` - this will perform the following actions:<br/>
@@ -41,11 +41,9 @@ This tool automates the configuration, initiation, monitoring, and management of
     - Create **backend** 'overlay' network with encryption enabled.
     - Generate a `keyfile` for the replicaset and add as a Docker "secret" for the swarm.
     - Deploy the docker stack recipe.
-    - The dbcontroller tool will run as a single instance per Swarm node (***global*** mode) as defined in the Compose YML.
-<br/>
+    - The dbcontroller tool will run as a single instance per Swarm node (***global*** mode) as defined in the Compose YML. <br/>
 
-4. Monitor logs for the tool's output and any potential errors or adjustments *(see troubleshooting section)*
-<br/>
+4. Monitor logs for the tool's output and any potential errors or adjustments *(see troubleshooting section)* <br/>
 
 5. To remove, run `./remove.sh` or delete the stack manually via `docker stack rm [stackname]`. 
 **Note:**  the `_backend` 'overlay' network created during initial deployment will not be removed automatically as it is considered external. If redeploying/updating, leave the existing network in place so as to retain the original network subnet.
