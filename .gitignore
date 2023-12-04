@@ -1,3 +1,6 @@
-
 dockerhub_README.txt
-.DS_Store
+**/.DS_Store
+*.log.*
+*.icloud
+.vscode
+__pycache__

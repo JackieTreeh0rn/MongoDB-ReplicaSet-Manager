@@ -1,0 +1,8 @@
+.git/
+docker-compose-stack.yml
+docker-mongodb_config-check.sh
+deploy.sh
+build.sh
+mongo-healthcheck
+mongo-rs.env
+dockerhub_README.txt
