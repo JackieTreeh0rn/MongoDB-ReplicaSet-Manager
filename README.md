@@ -36,8 +36,7 @@ This tool automates the configuration, initiation, monitoring, and management of
 <br/>
 
 3. Deploy the compose stack on your Docker Swarm using the `deploy.sh` script via:
-`sh deploy.sh` OR `./deploy.sh` - this will perform the following actions:
-<br/>
+`sh deploy.sh` OR `./deploy.sh` - this will perform the following actions:<br/>
     - Import ENVironment variables.
     - Create **backend** 'overlay' network with encryption enabled.
     - Generate a `keyfile` for the replicaset and add as a Docker "secret" for the swarm.
