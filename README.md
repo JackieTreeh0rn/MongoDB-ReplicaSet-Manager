@@ -1,6 +1,8 @@
 
 # MongoDB ReplicaSet Manager for Docker Swarm
 
+`Version: 1.01`
+
 ## Introduction
 This tool automates the configuration, initiation, monitoring, and management of a MongoDB replica set within a Docker Swarm environment. It ensures continuous operation, and adapts to changes within the Swarm network, ensuring high availability and consistency of data.
 
@@ -16,11 +18,11 @@ This tool automates the configuration, initiation, monitoring, and management of
 - ✅ **Scalability**: Designed to work with multiple nodes in a Docker Swarm environment and scale the ReplicaSet automatically as additional MongoDB nodes are added/removed from the stack.
 
 ## Requirements
-* [x] **MongoDB**: version 6.0 and above (recipe uses `7.0.2`).
-* [x] **PyMongo Driver**: 4.5.0 and above - *included* (image uses 4.6.0).
-* [x] **Docker**: tested on 24.0.7.
-* [x] **Operating System**: tested on Ubuntu Linux 23.04 <br/>(**mongo-replica-ctrl** image supports:
-    `linux/amd64`, `linux/arm/v7`, `linux/arm64`)
+* [x] **MongoDB**: version 6.0 and above (recipe uses `7.0.4`).
+* [x] **PyMongo Driver**: 4.5.0 and above - *included* (image uses `4.6.1`).
+* [x] **Docker**: tested on `24.0.7`.
+* [x] **Operating System**: Linux (tested on `Ubuntu 23.04`). <br/>**[mongo-replica-ctrl](https://hub.docker.com/r/jackietreehorn/mongo-replica-ctrl)** image supports:
+    `linux/amd64`, `linux/arm/v7`, `linux/arm64`
 
 ## Prerequisites
 - A [Docker Swarm cluster](https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/) (*locally or in the cloud as you prefer*) - tested on 6 node Swarm cluster.
