@@ -79,8 +79,7 @@ The script requires the following environment variables, defined in `mongo-rs.en
 - The included compose YML will use the latest version available on [DockerHub](https://hub.docker.com) via [jackietreehorn/mongo-replica-ctrl](https://hub.docker.com/r/jackietreehorn/mongo-replica-ctrl)  . Alternatively, you can use `docker pull jackietreehorn/mongo-replica-ctrl:latest` to pull the latest version and push it onto your own repo.  Additionally, the included [`./build.sh`](/build.sh) allows you to build the docker image locally as well.
 
 ## Troubleshooting / Additional Details
-* **Logs** - check the Docker service logs for the mongo controller service for details about its operation (enable `DEBUG:1` in compose YML if you want more detail).  
-If you do not use something like [Portainer](https://docs.portainer.io/start/install-ce/server/swarm) or similar web frontend to manage Docker, you can follow the controller logs via CLI on one of your docker nodes via:  
+* **Logs** - check the Docker service logs for the mongo controller service for details about its operation (enable `DEBUG:1` in compose YML if you want more detail).  If you do not use something like [Portainer](https://docs.portainer.io/start/install-ce/server/swarm) or similar web frontend to manage Docker, you can follow the controller logs via CLI on one of your docker nodes via:  
  `docker service logs [servicename]_dbcontroller --follow`
 
     Example:
