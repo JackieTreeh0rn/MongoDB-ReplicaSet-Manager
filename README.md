@@ -79,8 +79,7 @@ The script requires the following environment variables, defined in `mongo-rs.en
 - The included compose YML will use the latest version available on [DockerHub](https://hub.docker.com) via [jackietreehorn/mongo-replica-ctrl](https://hub.docker.com/r/jackietreehorn/mongo-replica-ctrl)  . Alternatively, you can use `docker pull jackietreehorn/mongo-replica-ctrl:latest` to pull the latest version and push it onto your own repo.  Additionally, the included [`./build.sh`](/build.sh) allows you to build the docker image locally as well.
 
 ## Troubleshooting / Additional Details
-* **Logs** - check the Docker service logs for the mongo controller service for details about its operation (enable `DEBUG:1` in compose YML if you want more detail).  If you do not use something like [Portainer](https://docs.portainer.io/start/install-ce/server/swarm) or similar web frontend to manage Docker, you can follow the controller logs via CLI on one of your docker nodes via:  
- `docker service logs [servicename]_dbcontroller --follow`
+* **Logs** - check the Docker service logs for the mongo controller service for details about its operation (enable `DEBUG:1` in compose YML if you want more detail).  If you do not use something like [Portainer](https://docs.portainer.io/start/install-ce/server/swarm) or similar web frontend to manage Docker, you can follow the controller logs via CLI on one of your docker nodes via: `docker service logs [servicename]_dbcontroller --follow`
 
     Example:
 
@@ -110,7 +109,7 @@ The script requires the following environment variables, defined in `mongo-rs.en
 
 * **Networking** - the `_backend` 'overlay' external network created during initial deployment is assigned an address space (eg. ***10.0.25.0***) automatically by Docker. You can define your own network space by uncommenting the relevant section in [`deploy.sh`](./deploy.sh) and adjusting as needed, in the event of overlap with other subnets in your network (*this should only be needed in extremely rare ocassions*). In addition, **DO NOT** remove this network when re-deploying / updating your stack on top of an existing-working replicaSet configuration so as to avoid subnet changes and connectivity issues between re-deployments.
 
-- **Persistent Data** - to use data persistence, the *mongo* service needs to be deployed in [**global mode**](https://docs.docker.com/compose/compose-file/deploy/#mode) (see `docker-compose-stack.yml`). This is to avoid more than one instance being deployed on the same node and prevent different instances from concurrently accessing the same MongoDB data space on the filesystem.  The volumes defined in the compose YML allow for each mongo repplica to use its own dedicated data store.  They are also set as external so that they aren't inadvertenly deleted or recreated between service redeployments.
+- **Persistent Data** - to use data persistence, the *mongo* service needs to be deployed in [**global mode**](https://docs.docker.com/compose/compose-file/deploy/#mode) (see `docker-compose-stack.yml`). This is to avoid more than one instance being deployed on the same node and prevent different instances from concurrently accessing the same MongoDB data space on the filesystem.  The volumes defined in the compose YML allow for each mongo node to use its own dedicated data store.  They are also set as external so that they aren't inadvertenly deleted or recreated between service redeployments.
 
 * **Swarm Nodes** - for HA purposes, your Swarm cluster should have more than one manager. This allows the *controller* to start/restart on different nodes in case of issues.
 
