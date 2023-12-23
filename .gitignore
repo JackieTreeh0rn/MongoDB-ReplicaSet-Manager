@@ -4,3 +4,4 @@ dockerhub_README.txt
 *.icloud
 .vscode
 __pycache__
+.tests

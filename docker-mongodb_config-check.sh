@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Run this script on any docker host in your swarm to interrogate a mongodb container and provide replicaset
+# Run this script on any docker manager node in your swarm to interrogate a mongodb container and provide replicaset
 # status and replicaset config, which displays 'primary' node, and other helpful info - useful for validating config or troubleshooting
 
 # Environment variables
