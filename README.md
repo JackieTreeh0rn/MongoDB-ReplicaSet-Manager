@@ -84,7 +84,7 @@ The script requires the following environment variables, defined in `mongo-rs.en
     Example:
 
     ```
-    docker service logs symbot-coinbasepro_dbcontroller --follow --details
+    docker service logs myapp_dbcontroller --follow --details
     ```
 
     ```| INFO:__main__:Checking Task IP: 10.0.26.48 for primary...
@@ -103,7 +103,7 @@ The script requires the following environment variables, defined in `mongo-rs.en
 
 * **Docker Stack Compose YML** - ensure that the MongoDB service is correctly configured and accessible within the Docker Swarm - see compose file for standard configuration. The *dbcontroller* that maintains the status of the replica-set must be deployed in a single instance over a Swarm manager node (see [`docker-compose-stack.yml`](./docker-compose-stack.yml)).  **Multiple instances of the Controller, may perform conflicting actions!**  Also, to ensure that the controller is restarted in case of error, there is a restart policy in the controller service definition.  
 
-  ***IMPORTANT***: The default MongoDB port is `27017`.  This port is only used internally by the services/applications in the compose YML and it is <u>**not**</u> published outside the Swarm.  Changing or publishing this port in the YML configuration will break management of the mongodb replicaSet.
+  ***IMPORTANT***: The default MongoDB port is `27017`.  This port is only used internally by the services/applications in the compose YML and it is <u>**not**</u> published outside the Swarm by design.  Changing or publishing this port in the YML configuration will break management of the mongodb replicaSet.
 
 * **Firewalls / SELinux** - Linux distributions using [SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux) are well known for causing [issues with MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-red-hat/). To check if your distribution is using SELinux you can run `sestatus` and either disable it or [configure it for mongodb](https://severalnines.com/blog/how-configure-selinux-mongodb-replica-sets/) if you must absolutely use it.  Additionally, ensure your distribution's firewall is disabled during testing or configured for Mongo - check your distribution docs for appropiate steps (eg. `systemctl status firewalld`, `ufw status`, etc). 
 
