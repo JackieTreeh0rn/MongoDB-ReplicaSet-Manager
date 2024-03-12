@@ -5,3 +5,4 @@ dockerhub_README.txt
 .vscode
 __pycache__
 .tests
+RUN.md
