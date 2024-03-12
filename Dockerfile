@@ -1,6 +1,6 @@
-FROM python:3.12-alpine3.19
+FROM python:3.13.0a4-alpine3.19
 
-RUN pip install docker pymongo==4.6.1 backoff
+RUN pip install docker pymongo==4.6.2 backoff
 
 RUN mkdir /src
 WORKDIR /src

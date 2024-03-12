@@ -29,7 +29,7 @@ services:
         monitor: 15s
 
   dbcontroller:
-    image: jackietreehorn/mongo-replica-ctrl:latest
+    image: jackietreehorn/mongo-replica-ctrl:dev
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
