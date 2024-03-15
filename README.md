@@ -18,10 +18,10 @@ This tool automates the configuration, initiation, monitoring, and management of
 - ✅ **Scalability**: Designed to work with multiple nodes in a Docker Swarm environment and scale the ReplicaSet automatically as additional MongoDB nodes are added/removed from the stack.
 
 ## Requirements
-* [x] **MongoDB**: version 6.0 and above (recipe uses `7.0.5`).
-* [x] **PyMongo Driver**: 4.5.0 and above - *included* (image uses `4.6.1`).
-* [x] **Docker**: tested on `24.0.7`.
-* [x] **Operating System**: Linux (tested on `Ubuntu 23.04`). <br/>**[mongo-replica-ctrl](https://hub.docker.com/r/jackietreehorn/mongo-replica-ctrl)** image supports:
+* [x] **MongoDB**: version 6.0 and above (recipe uses `7.0.6`).
+* [x] **PyMongo Driver**: 4.5.0 and above - *included* (image uses `4.6.2`).
+* [x] **Docker**: tested on >= `24.0.5`.
+* [x] **Operating System**: Linux (tested on >= `Ubuntu 23.04`). <br/>**[mongo-replica-ctrl](https://hub.docker.com/r/jackietreehorn/mongo-replica-ctrl)** image supports:
     `linux/amd64`, `linux/arm/v7`, `linux/arm64`
 
 ## Prerequisites
