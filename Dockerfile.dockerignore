@@ -6,3 +6,4 @@ build.sh
 mongo-healthcheck
 mongo-rs.env
 dockerhub_README.txt
+RUN.md
