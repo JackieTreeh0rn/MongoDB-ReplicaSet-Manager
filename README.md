@@ -21,7 +21,7 @@ This tool automates the configuration, initiation, monitoring, and management of
 * [x] **MongoDB**: version 6.0 and above (recipe uses `7.0.6`).
 * [x] **PyMongo Driver**: 4.5.0 and above - *included* (image uses `4.6.2`).
 * [x] **Docker**: tested on >= `24.0.5`.
-* [x] **Operating System**: Linux (tested on `Ubuntu 23.04`). <br/>**[mongo-replica-ctrl](https://hub.docker.com/r/jackietreehorn/mongo-replica-ctrl)** image supports:
+* [x] **Operating System**: Linux (tested on `Ubuntu 23.04, 24.04.2`). <br/>**[mongo-replica-ctrl](https://hub.docker.com/r/jackietreehorn/mongo-replica-ctrl)** image supports:
     `linux/amd64`, `linux/arm/v7`, `linux/arm64`
 
 ## Prerequisites
@@ -182,7 +182,6 @@ The script requires the following environment variables, defined in `mongo-rs.en
     ***MongoDB operating in replicaset mode will not become available for use until the replicaset configuration is finalized and a primary instance is elected.***
 
 ## Contact
-- Røb
-    - Discord: [discordapp.com/users/916819244048592936](https://discordapp.com/users/916819244048592936)
-    - GitHub: [github.com/jackietreeh0rn](https://github.com/jackietreeh0rn)
-    - DockerHub: [hub.docker.com/u/jackietreehorn](https://hub.docker.com/u/jackietreehorn)
+   - Discord: [discordapp.com/users/916819244048592936](https://discordapp.com/users/916819244048592936)
+   - GitHub: [github.com/jackietreeh0rn](https://github.com/jackietreeh0rn)
+   - DockerHub: [hub.docker.com/u/jackietreehorn](https://hub.docker.com/u/jackietreehorn)
