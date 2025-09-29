@@ -29,7 +29,7 @@ services:
         monitor: 15s
 
   dbcontroller:
-    image: jackietreehorn/mongo-replica-ctrl:dev
+    image: jackietreehorn/mongo-replica-ctrl:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
@@ -99,9 +99,6 @@ volumes:
   mongoconfigdb:
     external: true
     name: ${STACK_NAME}_mongoconfigdb
-  weblogs:
-    external: true
-    name: ${STACK_NAME}_weblogs
 
 networks:
   backend:
