@@ -42,7 +42,7 @@ services:
       INITDB_DATABASE: ${INITDB_DATABASE}
       INITDB_USER: ${INITDB_USER}
       INITDB_PASSWORD: ${INITDB_PASSWORD}
-      DEBUG: 1
+      DEBUG: 0
     entrypoint: python /src/db-replica_ctrl.py
     networks:
       - backend
