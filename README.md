@@ -103,23 +103,11 @@ The script requires the following environment variables, defined in `mongo-rs.en
 
   If you do not use something like [Portainer](https://docs.portainer.io/start/install-ce/server/swarm) or similar web frontend to manage Docker, you can follow the controller logs via CLI on one of your docker nodes via: `docker service logs [servicename]_dbcontroller --follow`
 
+
     Example:
 
-    ```
-    docker service logs myapp_dbcontroller --follow --details
-    ```
-
-    ```| INFO:__main__:Checking Task IP: 10.0.26.48 for primary...
-    | INFO:__main__:Expected number of mongodb nodes: {6} | Remaining to start: {0}
-    | INFO:__main__:Mongo service nodes are up and running!
-    | INFO:__main__:Mongo tasks ips: ['10.0.26.48', '10.0.26.52', '10.0.26.51', '10.0.26.49', '10.0.26.7', '10.0.26.4']
-    | INFO:__main__:Inspecting Mongo nodes for pre-existing replicaset - this might take a few moments, please be patient...
-    | INFO:__main__:Pre-existing replicaSet configuration found in node 10.0.26.48: {'10.0.26.52', '10.0.26.51', '10.0.26.49', '10.0.26.4', '10.0.26.7', '10.0.26.48'}
-    | INFO:__main__:Checking Task IP: 10.0.26.52 for primary...
-    | INFO:__main__:Checking Task IP: 10.0.26.51 for primary...
-    | INFO:__main__:Checking Task IP: 10.0.26.7 for primary...
-    | INFO:__main__:Checking Task IP: 10.0.26.48 for primary...
-    | INFO:__main__:--> Mongo ReplicaSet Primary is: 10.0.26.48 <--
+    ![Controller log output: member changes, config updates, primary election](./screenshots/replicaset-manager-log-1.png)
+    ![Controller log output: redeployment, config detection, primary failover](./screenshots/replicaset-manager-log-2.png)
 
 - **Environment** - verify that all required environment variables are correctly set in [`mongo-rs.env`](./mongo-rs.env).
 
