@@ -14,12 +14,12 @@ services:
     networks:
       - backend
     healthcheck:
-      test: ["CMD", "bash", "/mongo-healthcheck"]
+      test: ["CMD-SHELL", "sh /mongo-healthcheck"]
       interval: 1m
       timeout: 15s
       retries: 3
       start_period: 10s
-    deploy: 
+    deploy:
       mode: global
       restart_policy:
         condition: on-failure
@@ -42,10 +42,10 @@ services:
       INITDB_DATABASE: ${INITDB_DATABASE}
       INITDB_USER: ${INITDB_USER}
       INITDB_PASSWORD: ${INITDB_PASSWORD}
-      DEBUG: 0
+      DEBUG: 1
     entrypoint: python /src/db-replica_ctrl.py
     networks:
-      - backend   
+      - backend
     depends_on:
       - database
     deploy:

@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 
-set -eo pipefail
+set -e
 
-host="$(hostname --ip-address || echo '127.0.0.1')"
+host="$(hostname -i 2>/dev/null | awk '{print $1}')"
+[ -z "$host" ] && host='127.0.0.1'
 
-if mongosh --quiet --host "$host" --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'; then
-	exit 0
+if mongosh --quiet --host "$host" --eval "var res=db.runCommand({ ping: 1 }); if (res && res.ok===1) { quit(0); } else { quit(2); }"; then
+    exit 0
 fi
 
 exit 1
