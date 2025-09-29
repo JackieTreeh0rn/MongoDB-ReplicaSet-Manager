@@ -6,4 +6,37 @@ build.sh
 mongo-healthcheck
 mongo-rs.env
 dockerhub_README.txt
-RUN.md
+
+# Exclude Markdown docs from build context
+*.md
+*.MD
+*.markdown
+
+# Python bytecode and caches
+__pycache__/
+**/__pycache__/**
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / tooling noise
+.DS_Store
+.idea/
+.vscode/
+.github/
