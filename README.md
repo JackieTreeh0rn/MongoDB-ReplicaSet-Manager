@@ -211,8 +211,6 @@ The script requires the following environment variables, defined in `mongo-rs.en
     - Docker SDK for Python: `>=7,<9` to follow latest 7.x without adopting future breaking major changes automatically.
 
 ## Contact
-- Røb
-    - Mail: jackietreehorn01@protonmail.com
-    - Discord: [discordapp.com/users/916819244048592936](https://discordapp.com/users/916819244048592936)
-    - GitHub: [github.com/jackietreeh0rn](https://github.com/jackietreeh0rn)
-    - DockerHub: [hub.docker.com/u/jackietreehorn](https://hub.docker.com/u/jackietreehorn)
+   - Discord: [discordapp.com/users/916819244048592936](https://discordapp.com/users/916819244048592936)
+   - GitHub: [github.com/jackietreeh0rn](https://github.com/jackietreeh0rn)
+   - DockerHub: [hub.docker.com/u/jackietreehorn](https://hub.docker.com/u/jackietreehorn)
